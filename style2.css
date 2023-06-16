@@ -1,0 +1,59 @@
+body *{
+    box-sizing: border-box;
+    border: 5px solid;
+}
+
+.top-left-corner {
+    border-color: red;
+    grid-area: t-l-c;
+    background-color: red;
+}
+
+.top-right-corner {
+    border-color: purple;
+    grid-area: t-r-c;
+    background-color: purple;
+}
+
+.bottom-left-corner {
+    border-color: yellow;
+    grid-area: b-l-c;
+    background-color: yellow;
+}
+
+.bottom-right-corner {
+    border-color: green;
+    grid-area: b-r-c;
+    background-color: green;
+}
+
+.middle {
+    border-color: orange;
+    grid-area: middle;
+    background-color: orange;
+    width: 80px;
+    height: 80px;
+    align-self: center;
+    justify-self: center;
+    /*la cosa comoda è dare la proprietà di giustificazione e allineamento all'elemento stesso, perché se le metto a tutti gli elementi quelli che non hanno dimensioni esplicite spariscono*/
+}
+
+.grid {
+    height: 800px;
+    width: 800px;
+    display: grid;
+    grid-template-areas: "t-l-c t-l-c t-r-c" 
+                         "b-l-c middle t-r-c" 
+                         "b-l-c b-r-c b-r-c";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /*se ho una griglia come questa posso mettere repeat (3, 200px) e mi metterà 3 righe da 200 pixel senza starlo a riscrivere. Utile per le griglie con tante righe e/o colonne*/
+    gap: 10px;
+    /*se metto due valori al gap senza specificare, uno è per le row e l'altro per le column (non ricordo l'ordine)*/
+    justify-content: center;
+    align-content: center;
+    /*content serve per indicare la posizione rispetto a tutta la griglia (il mio div con la classe grid)
+    per spostare gli elementi DENTRO LA CELLA, uso element*/
+    
+    /*justify-items: stretch è il default che permette agli elementi di stretcharsi*/
+}
